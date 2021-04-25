@@ -3,11 +3,3 @@
 using namespace std;
 
 
-
-auto run () -> int
-{
-    cout << passing_one_parameter (4) << endl;
-    return 0;
-}
-
-

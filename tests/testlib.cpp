@@ -1,4 +1,4 @@
-//#define RUN_CATCH
+#define RUN_CATCH
 
 #if defined (RUN_CATCH)
 
@@ -13,10 +13,10 @@ auto main (int argc, char* argv[]) -> int
 
 #else
 
-#include "test.hpp"
+//#include "test.hpp"
 auto main (int argc, char* argv[]) -> int
 {
-    return run ();
+//    return run ();
 }
 
 
