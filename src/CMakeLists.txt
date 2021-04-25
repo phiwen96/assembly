@@ -2,11 +2,22 @@ file(GLOB_RECURSE HEADER_LIST "${PROJECT_SOURCE_DIR}/include/${CMAKE_PROJECT_NAM
 file(GLOB SOURCE_LIST ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB ASSEMBLY_FILES ${PROJECT_SOURCE_DIR}/src/*.s)
 
+
+
+
 set (self ${PROJECT_NAME})
 
 add_library (${self} STATIC 
 ${ASSEMBLY_FILES} ${SOURCE_LIST}  ${HEADER_LIST} 
 )
+
+foreach (file ${ASSEMBLY_FILES})
+    set_source_files_properties(${file} PROPERTIES COMPILE_FLAGS "-x assembler-with-cpp")
+    source_group(TREE ${CMAKE_CURRENT_LIST_DIR}
+            PREFIX "sources"               
+            FILES  ${file}
+    )
+endforeach ()
 
 ph_IDE ()
 
