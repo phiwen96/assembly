@@ -12,7 +12,8 @@ int test ()
       cout << passing_two_parameters (11, 12) << endl;
 
       cout << passing_one_parameter (10) << endl;
-      cout << myloop () << endl;
+    start ();
+//      cout << myloop () << endl;
       
       
       cout << someFunction() << endl;
